@@ -1,5 +1,5 @@
 {
-  "title": "testext",
+  "title": "homepage",
   "formats": {
     "font": {
       "default": {
@@ -15,7 +15,9 @@
             "Rubik-Regular",
             "NotoSans",
             "NotoSerif",
-            "MuktaVaani-Regular"
+            "MuktaVaani-Regular",
+            "Roboto-Regular.ttf",
+            "Roboto-Medium.ttf"
           ]
         },
         "fontStyle": {
@@ -60,6 +62,12 @@
     }
   },
   "properties": {
+    "mrbrackinsColor": {
+      "type": "string",
+      "format": "color",
+      "title": "Mr Brackins Color",
+      "default": "red"
+    },
     "featuredColor": {
       "type": "string",
       "title": "Featured color - main color of the app",
@@ -418,6 +426,10 @@
   },
   "layout": {
     "sections": [
+      {
+        "title": "Mr Brackins Color",
+        "properties": ["mrbrackinsColor"]
+      },
       {
         "title": "Basic colors",
         "properties": [

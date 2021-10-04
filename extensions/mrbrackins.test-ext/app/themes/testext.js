@@ -53,6 +53,14 @@ export default (customVariables = {}) => {
   };
 
   return _.merge({}, getTheme(variables), {
+    'mrbrackins.homepage.landing': {
+      mrbrackinsCustomText: {
+        color: variables.mrbrackinsColor,
+      },
+    },
+    'shoutem.ui.Text': {
+      // fontSize: 25,
+    },
     // Html
     'shoutem.ui.Html': {
       a: {
