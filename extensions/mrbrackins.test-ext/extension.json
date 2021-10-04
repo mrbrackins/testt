@@ -1,0 +1,20 @@
+{
+  "name": "test-ext",
+  "title": "Test ext",
+  "version": "0.0.1",
+  "description": "",
+  "platform": "1.0.*",
+  "screens": [
+    {
+      "name": "MyScreen"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "MyScreen",
+      "title": "My screen",
+      "description": "A shortcut for MyScreen",
+      "screen": "@.MyScreen"
+    }
+  ]
+}

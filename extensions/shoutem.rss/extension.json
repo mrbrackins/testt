@@ -1,0 +1,27 @@
+{
+  "name": "rss",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "type": "system",
+  "title": "RSS",
+  "description": "Integrate with RSS feed source",
+  "releaseNotes": "* Continuous improvements",
+  "icon": "server/assets/add-rss-image.png",
+  "categories": [
+    "content"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "pages": [
+    {
+      "name": "RssPage",
+      "type": "native-component",
+      "path": "dummy.js"
+    }
+  ],
+  "settings": {
+    "baseApiEndpoint": "http://v4.api.shoutem.com"
+  }
+}

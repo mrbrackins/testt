@@ -1,0 +1,14 @@
+{
+  "name": "shoutem.deals",
+  "version": "3.0.0-build1629282604830",
+  "description": "Create special deals and redeem them with coupons",
+  "dependencies": {
+    "currency-formatter": "^1.3.1",
+    "numeral": "^2.0.6"
+  },
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}

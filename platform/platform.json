@@ -1,0 +1,69 @@
+{
+  "version": "3.0.2",
+  "mobileAppVersion": "3.0.2",
+  "releaseNotes": "* Fixed paused Podcast/Radio resuming after audio interruption\n* For devs: Fixed production build info helper script",
+  "settings": {
+    "DEV-appetizeKey": "tmbt6dp2z7dafedwuc3z2b586r",
+    "QA-appetizeKey": "mu8a6zv0xptggaezkyzr9v141r",
+    "Production-appetizeKey": "9p8wr2bcjt6ng8rw80ueba4yhm"
+  },
+  "builds": {
+    "live": {
+      "excludedPackages": []
+    },
+    "preview": {
+      "excludedPackages": [
+        "shoutem.notification-center",
+        "shoutem.push-notifications",
+        "shoutem.shoutem-notification-center",
+        "shoutem.code-push"
+      ]
+    }
+  },
+  "dependencies": {
+    "shoutem.about": "~3.0.1",
+    "shoutem.analytics": "~3.0.0",
+    "shoutem.application": "~3.1.0",
+    "shoutem.audio": "~3.0.1",
+    "shoutem.auth": "~3.0.1",
+    "shoutem.camera": "~3.0.0",
+    "shoutem.cms": "~3.1.0",
+    "shoutem.code-push": "~3.0.0",
+    "shoutem.deals": "~3.0.0",
+    "shoutem.events": "~3.0.1",
+    "shoutem.favorites": "~3.0.0",
+    "shoutem.firebase": "~3.0.0",
+    "shoutem.flurry-analytics": "~3.0.0",
+    "shoutem.i18n": "~3.0.0",
+    "shoutem.ical-events": "~3.0.0",
+    "shoutem.layouts": "~3.0.0",
+    "shoutem.loyalty": "~3.0.5",
+    "shoutem.navigation": "~3.1.0",
+    "shoutem.news": "~3.2.1",
+    "shoutem.notification-center": "~3.0.1",
+    "shoutem.page": "~3.0.3",
+    "shoutem.people": "~3.0.2",
+    "shoutem.permissions": "~3.0.0",
+    "shoutem.persist": "~3.0.0",
+    "shoutem.photos": "~3.0.1",
+    "shoutem.places": "~3.1.0",
+    "shoutem.preview": "~3.0.0",
+    "shoutem.products": "~3.0.1",
+    "shoutem.push-notifications": "~3.0.0",
+    "shoutem.redux": "~3.0.0",
+    "shoutem.rss": "~3.0.0",
+    "shoutem.rss-monitoring": "~3.0.0",
+    "shoutem.rss-news": "~3.0.1",
+    "shoutem.rss-photos": "~3.0.0",
+    "shoutem.rss-videos": "~3.0.0",
+    "shoutem.rubicon-theme": "~3.0.5",
+    "shoutem.social": "~3.1.2",
+    "shoutem.sub-navigation": "~3.0.0",
+    "shoutem.theme": "~3.0.2",
+    "shoutem.video": "~3.0.0",
+    "shoutem.vimeo": "~3.0.0",
+    "shoutem.web-view": "~3.0.0",
+    "shoutem.wordpress": "~3.0.0",
+    "shoutem.youtube": "~3.0.0"
+  }
+}

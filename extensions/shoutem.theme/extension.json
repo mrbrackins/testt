@@ -1,0 +1,11 @@
+{
+  "name": "theme",
+  "version": "3.0.2",
+  "platform": "~3.0.1",
+  "type": "system",
+  "title": "Theme",
+  "description": "Resolve and store theme related configuration",
+  "releaseNotes": "* Updated UI package version",
+  "icon": "server/assets/add-theme-image.png",
+  "categories": []
+}

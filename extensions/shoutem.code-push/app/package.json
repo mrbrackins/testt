@@ -1,0 +1,13 @@
+{
+  "name": "shoutem.code-push",
+  "version": "3.0.0-build1629282529430",
+  "scripts": {
+    "prebuild": "node -e 'require(\"./build\").runPreBuild()'"
+  },
+  "dependencies": {
+    "react-native-code-push": "~6.2.0"
+  },
+  "nativeDependencies": [
+    "react-native-code-push"
+  ]
+}

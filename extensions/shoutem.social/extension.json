@@ -1,0 +1,117 @@
+{
+  "name": "social",
+  "title": "Social",
+  "version": "3.1.2",
+  "platform": "^3.0.0",
+  "skipClone": false,
+  "releaseNotes": "* Added ability to block users per account level",
+  "description": "Let members create posts, comment and like them",
+  "categories": [
+    "users"
+  ],
+  "dependencies": [
+    "shoutem.camera"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "icon": "server/assets/add-community-image.png",
+  "screens": [
+    {
+      "name": "SocialWallScreen"
+    },
+    {
+      "name": "StatusDetailsScreen"
+    },
+    {
+      "name": "CreateStatusScreen"
+    },
+    {
+      "name": "MembersScreen"
+    },
+    {
+      "name": "SearchScreen"
+    },
+    {
+      "name": "NotificationSettingsScreen"
+    },
+    {
+      "name": "BlockedUsers"
+    }
+  ],
+  "shortcuts": [
+    {
+      "title": "Wall",
+      "name": "wall",
+      "screen": "@.SocialWallScreen",
+      "icon": "theme://feed-wall.png",
+      "adminPages": [
+        {
+          "page": "@.ShortcutInfoPage",
+          "title": "Info"
+        }
+      ]
+    },
+    {
+      "title": "Members",
+      "name": "members",
+      "screen": "@.MembersScreen",
+      "icon": "theme://members.png",
+      "adminPages": [
+        {
+          "page": "@.UserGroupsVisibilityPage",
+          "title": "User Groups Filtering"
+        },
+        {
+          "page": "@.ShortcutInfoPage",
+          "title": "Info"
+        }
+      ],
+      "settings": {
+        "showAllUsers": true
+      }
+    },
+    {
+      "name": "BlockedUsers",
+      "title": "Blocked users",
+      "screen": "@.BlockedUsers",
+      "icon": "theme://members.png"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.SocialSettingsPage",
+      "title": "Settings"
+    }
+  ],
+  "pages": [
+    {
+      "name": "SocialSettingsPage",
+      "path": "server/build/index.html?page=SocialSettingsPage",
+      "type": "html"
+    },
+    {
+      "name": "ShortcutInfoPage",
+      "path": "server/build/index.html?page=ShortcutInfoPage",
+      "type": "html"
+    },
+    {
+      "name": "UserGroupsVisibilityPage",
+      "type": "react-page"
+    }
+  ],
+  "settings": {
+    "authApiEndpoint": "auth.api.qa.sauros.hr",
+    "maxStatusLength": 140,
+    "enablePhotoAttachments": true,
+    "enableComments": true,
+    "enableInteractions": true
+  },
+  "cloud": [
+    {
+      "type": "api",
+      "script": "npm run migrate:docker && npm run start:server:docker"
+    }
+  ]
+}

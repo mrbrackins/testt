@@ -1,0 +1,48 @@
+{
+  "name": "i18n",
+  "title": "Language & Region",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "releaseNotes": "* Added a script for calling and debugging prebuild script",
+  "description": "Configure the language and regional settings of your app.",
+  "icon": "server/assets/add-translation.png",
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "pages": [
+    {
+      "name": "LanguagePage",
+      "type": "react-page"
+    },
+    {
+      "name": "ScreensPage",
+      "type": "react-page"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.LanguagePage",
+      "title": "Language"
+    },
+    {
+      "page": "@.ScreensPage",
+      "title": "Screens"
+    }
+  ],
+  "shortcuts": [
+    {
+      "title": "Languages",
+      "description": "Provide your users with means of direct interaction",
+      "name": "SelectLanguageScreen",
+      "screen": "@.SelectLanguageScreen",
+      "icon": "theme://languages.png"
+    }
+  ],
+  "screens": [
+    {
+      "name": "SelectLanguageScreen",
+      "title": "Select app language"
+    }
+  ]
+}

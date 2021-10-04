@@ -1,0 +1,9 @@
+{
+  "name": "shoutem.rss-news",
+  "version": "3.0.1-build1629387005471",
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}

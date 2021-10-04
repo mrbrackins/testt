@@ -1,0 +1,197 @@
+{
+  "name": "news",
+  "version": "3.2.1",
+  "platform": "^3.0.0",
+  "title": "News",
+  "description": "Show news articles",
+  "releaseNotes": "* Added new layout - Medium photo with solid navbar without the date\n* Added image gallery feature",
+  "icon": "server/assets/add-news-image.png",
+  "dependencies": [
+    "shoutem.layouts",
+    "shoutem.cms"
+  ],
+  "categories": [
+    "content"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "news-shortcut",
+      "title": "News",
+      "icon": "theme://news.png",
+      "screen": "@.ArticlesScreen",
+      "capabilities": [
+        "shoutem.cms.search",
+        "shoutem.cms.import-csv",
+        "shoutem.cms.import-rss"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.articles"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "News",
+        "extensionTitle": "News"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "ArticlesScreen",
+      "title": "Fixed grid with a featured item",
+      "image": "./server/assets/screens/grid.png",
+      "navigatesTo": [
+        "@.ArticleDetailsScreen"
+      ],
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "FixedGridArticlesScreen",
+      "title": "Fixed grid",
+      "image": "./server/assets/screens/fixed-grid.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "CompactListArticlesScreen",
+      "title": "Compact list",
+      "image": "./server/assets/screens/list.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "FeaturedCompactListArticlesScreen",
+      "title": "Compact list with a featured item",
+      "image": "./server/assets/screens/featuredlist.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "LargeListArticlesScreen",
+      "title": "Large list",
+      "image": "./server/assets/screens/large-list.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "large-list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "MediumListArticlesScreen",
+      "title": "Medium list",
+      "image": "./server/assets/screens/medium-list.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "medium-list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "FeaturedMediumListArticlesScreen",
+      "title": "Medium list with a featured item",
+      "image": "./server/assets/screens/medium-list-with-featured.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "medium-list",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "TileListArticlesScreen",
+      "title": "Tile list",
+      "image": "./server/assets/screens/tile-list.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "listType": "tile-list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "ArticleDetailsScreen",
+      "title": "Large photo with transparent navbar",
+      "image": "./server/assets/screens/large-photo-clear-navbar-details.png",
+      "settings": {
+        "navigationBarStyle": "clear"
+      }
+    },
+    {
+      "name": "SolidNavbarMediumArticleDetailsScreen",
+      "title": "Medium photo with solid navbar",
+      "image": "./server/assets/screens/medium-photo-solid-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "SolidNavbarMediumArticleDetailsNoDateScreen",
+      "title": "Medium photo with solid navbar without the date",
+      "image": "./server/assets/screens/medium-photo-solid-navbar-details-no-date.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "SolidNavbarLargeArticleDetailsScreen",
+      "title": "Large photo with solid navbar",
+      "image": "./server/assets/screens/large-photo-solid-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "ClearNavbarMediumArticleDetailsScreen",
+      "title": "Medium photo with transparent navbar",
+      "image": "./server/assets/screens/medium-photo-clear-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "clear"
+      }
+    },
+    {
+      "name": "FeaturedGrid122ArticlesScreen",
+      "title": "1-2-2 pattern grid with a featured item",
+      "image": "./server/assets/screens/1-2-2-grid-with-featured.png",
+      "extends": "@.ArticlesScreen",
+      "settings": {
+        "hasFeaturedItem": true
+      }
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "articles",
+      "path": "./server/data-schemas/articles.json"
+    }
+  ]
+}

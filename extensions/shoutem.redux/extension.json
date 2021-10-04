@@ -1,0 +1,14 @@
+{
+  "name": "redux",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "title": "Redux",
+  "description": "Redux integration",
+  "icon": "server/assets/add-redux-image.png",
+  "type": "system",
+  "categories": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  }
+}

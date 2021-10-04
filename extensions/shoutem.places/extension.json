@@ -1,0 +1,142 @@
+{
+  "name": "places",
+  "version": "3.1.0",
+  "platform": "^3.0.0",
+  "title": "Places",
+  "description": "Show items with location on list or map",
+  "releaseNotes": "* Added details screen layouts with solid navbar",
+  "icon": "./server/assets/images/add-places-image.png",
+  "dependencies": ["shoutem.layouts", "shoutem.cms"],
+  "categories": ["content"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "places-shortcut",
+      "title": "Places",
+      "screen": "@.PlacesListScreen",
+      "icon": "theme://address-full.png",
+      "capabilities": [
+        "shoutem.cms.search",
+        "shoutem.cms.import-csv",
+        "shoutem.cms.export-csv"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.places"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "extensionTitle": "Places",
+        "defaultShortcutTitle": "Places",
+        "sortField": "location",
+        "sortOrder": "ascending"
+      }
+    },
+    {
+      "title": "My Places",
+      "description": "List of favorited places",
+      "name": "FavoritesList",
+      "icon": "theme://add-to-favorites-full.png",
+      "screen": "@.FavoritesList",
+      "adminPages": [
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "extensionTitle": "Places",
+        "defaultShortcutTitle": "My Places",
+        "favoritesSchemas": ["@.places"]
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "PlacesListWithIcons",
+      "title": "Icon List",
+      "extends": "@.PlacesListScreen",
+      "image": "./server/assets/images/layout_icon.png"
+    },
+    {
+      "name": "PlacesListScreen",
+      "title": "Photo List",
+      "image": "./server/assets/images/layout_photo.png",
+      "navigatesTo": ["@.PlaceDetails"]
+    },
+    {
+      "name": "PlacesGridScreen",
+      "title": "Grid list",
+      "extends": "@.PlacesListScreen",
+      "image": "./server/assets/images/layout_grid.png",
+      "navigatesTo": ["@.PlaceDetails"]
+    },
+    {
+      "name": "PlaceDetails",
+      "title": "Large photo with transparent navbar details page",
+      "image": "./server/assets/images/details_large.png"
+    },
+    {
+      "name": "SolidNavbarPlaceDetails",
+      "title": "Large photo with solid navbar details page",
+      "extends": "@.PlaceDetails",
+      "image": "./server/assets/images/details_large_solid.png",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "FavoritesList",
+      "title": "Photo list",
+      "image": "./server/assets/images/layout_photo.png",
+      "navigatesTo": ["@.PlaceDetails"]
+    },
+    {
+      "name": "FavoritesListWithIcons",
+      "title": "Icon List",
+      "extends": "@.FavoritesList",
+      "image": "./server/assets/images/layout_icon.png"
+    },
+    {
+      "name": "MediumPlaceDetails",
+      "title": "Medium photo with transparent navbar details page",
+      "extends": "@.PlaceDetails",
+      "image": "./server/assets/images/details_medium.png"
+    },
+    {
+      "name": "SolidNavbarMediumPlaceDetails",
+      "title": "Medium photo with solid navbar details page",
+      "extends": "@.PlaceDetails",
+      "image": "./server/assets/images/details_medium_solid.png",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "SinglePlaceMap",
+      "title": "Map View",
+      "navigatesTo": ["@.PlaceDetails"]
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "places",
+      "path": "server/data-schemas/Places.json"
+    }
+  ]
+}

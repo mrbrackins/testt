@@ -1,0 +1,101 @@
+{
+  "name": "notification-center",
+  "title": "Notification center",
+  "version": "3.0.1",
+  "platform": "^3.0.0",
+  "description": "View and manage push notifications within the app",
+  "releaseNotes": "* Fixed bug when sometimes a user would receive daily reminder notification while it is not enabled",
+  "icon": "./server/assets/images/add-notifications-settings-image.png",
+  "categories": ["users"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "title": "Notification center",
+      "description": "List of received notifications",
+      "name": "openNotificationsScreen",
+      "icon": "theme://activity.png",
+      "screen": "@.NotificationsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Notification center",
+        "extensionTitle": "Notifications"
+      }
+    },
+    {
+      "title": "Group settings",
+      "description": "List of available push groups",
+      "name": "openPushGroupsScreen",
+      "icon": "theme://settings.png",
+      "screen": "@.PushGroupsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Group settings",
+        "extensionTitle": "Notifications"
+      }
+    },
+    {
+      "title": "Notification settings",
+      "description": "Notification settings",
+      "name": "openNotificationSettingsScreen",
+      "icon": "theme://settings.png",
+      "screen": "@.NotificationSettingsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Notification settings",
+        "extensionTitle": "Notifications"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "NotificationsScreen"
+    },
+    {
+      "name": "PushGroupsScreen"
+    },
+    {
+      "name": "NotificationSettingsScreen"
+    },
+    {
+      "name": "NotificationDailySettingsScreen"
+    },
+    {
+      "name": "ReminderSettingsScreen"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.NotificationsPage",
+      "title": "Notifications",
+      "categories": ["push"]
+    },
+    {
+      "page": "@.GroupsPage",
+      "title": "Groups",
+      "categories": ["push"]
+    },
+    {
+      "page": "@.GeneralPage",
+      "title": "General",
+      "categories": ["push"]
+    }
+  ],
+  "pages": [
+    {
+      "name": "NotificationsPage",
+      "type": "react-page"
+    },
+    {
+      "name": "GroupsPage",
+      "type": "react-page"
+    },
+    {
+      "name": "GeneralPage",
+      "type": "react-page"
+    }
+  ]
+}

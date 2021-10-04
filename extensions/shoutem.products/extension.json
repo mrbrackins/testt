@@ -1,0 +1,79 @@
+{
+  "name": "products",
+  "version": "3.0.1",
+  "platform": "^3.0.0",
+  "title": "Products",
+  "description": "Show products with purchase link",
+  "releaseNotes": "* Added layout images",
+  "categories": [
+    "commerce"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "icon": "server/assets/add-products-image.png",
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.web-view"
+  ],
+  "shortcuts": [
+    {
+      "name": "openProductsList",
+      "title": "Products",
+      "screen": "@.ProductsList",
+      "icon": "theme://cart.png",
+      "capabilities": [
+        "shoutem.cms.search",
+        "shoutem.cms.import-csv"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.Products"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "Products",
+        "extensionTitle": "Products"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "ProductsList",
+      "title": "Compact list",
+      "image": "./server/assets/screens/compact-list.png",
+      "groupTitle": "Choose list layout",
+      "navigatesTo": [
+        "@.ProductDetails"
+      ]
+    },
+    {
+      "name": "ProductDetails",
+      "title": "Large photo clear navbar details",
+      "groupTitle": "Choose product details layout",
+      "image": "./server/assets/screens/large-photo-details.png"
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "Products",
+      "path": "./server/data-schemas/Products.json"
+    }
+  ]
+}

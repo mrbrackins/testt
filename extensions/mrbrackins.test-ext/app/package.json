@@ -1,0 +1,8 @@
+{
+  "name": "mrbrackins.test-ext",
+  "version": "0.0.1-build1633311523719",
+  "description": "",
+  "dependencies": {
+    "react-native-svg": "^12.1.1"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "rss-photos",
+  "title": "Photos RSS",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "description": "Show a photo gallery from an RSS feed",
+  "releaseNotes": "UI improvements on RSS photo details screen",
+  "icon": "server/assets/add-photos-image.png",
+  "dependencies": [
+    "shoutem.layouts",
+    "shoutem.rss"
+  ],
+  "categories": [
+    "media"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "photos-rss-shortcut",
+      "title": "Photos RSS",
+      "screen": "@.PhotosList",
+      "icon": "theme://photo.png",
+      "capabilities": [
+        "shoutem.rss.feed"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.rss.RssPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "shoutem.proxy.photos"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "Photos RSS",
+        "extensionTitle": "Photos RSS",
+        "feedType": "Photo"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "PhotosList",
+      "title": "List",
+      "navigatesTo": [
+        "@.PhotoDetails"
+      ],
+      "image": "./server/assets/screens/layout-large-list.png"
+    },
+    {
+      "name": "PhotosGrid",
+      "title": "Grid",
+      "extends": "@.PhotosList",
+      "image": "./server/assets/screens/layout-grid.png"
+    },
+    {
+      "name": "PhotoDetails",
+      "title": "PhotoDetails"
+    }
+  ]
+}

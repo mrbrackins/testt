@@ -1,0 +1,24 @@
+{
+  "name": "camera",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "title": "Camera",
+  "type": "system",
+  "description": "Shoutem camera extension",
+  "releaseNotes": "* Optimize scanning behaviour",
+  "icon": "server/assets/add-camera-image.png",
+  "screens": [
+    {
+      "name": "QRCodeScannerScreen"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "QRCodeScanner",
+      "title": "QR Code Scanner",
+      "icon": "theme://take-a-photo.png",
+      "description": "Scan any QR code with your camera and open the scanned link",
+      "screen": "@.QRCodeScannerScreen"
+    }
+  ]
+}

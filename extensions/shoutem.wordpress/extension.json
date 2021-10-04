@@ -1,0 +1,111 @@
+{
+  "name": "wordpress",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "title": "WordPress",
+  "description": "Show news articles from WordPress blog.",
+  "releaseNotes": "* Fixed loading WordPress items cover photos",
+  "icon": "server/assets/extension-icon.png",
+  "dependencies": [
+    "shoutem.layouts"
+  ],
+  "categories": [
+    "content"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "wordpress-shortcut",
+      "title": "WordPress",
+      "icon": "theme://news.png",
+      "screen": "@.ArticlesFeaturedGridScreen",
+      "adminPages": [
+        {
+          "page": "@.WordPressFeedPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "shoutem.wordpress.feedItems"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "WordPress",
+        "extensionTitle": "WordPress"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "WordPressFeedPage",
+      "type": "react-page"
+    }
+  ],
+  "screens": [
+    {
+      "name": "ArticlesFeaturedGridScreen",
+      "title": "Grid with a featured article",
+      "image": "./server/assets/screens/featuredgrid.png",
+      "groupTitle": "Choose List screen layout",
+      "navigatesTo": [
+        "@.ArticleDetailsScreen"
+      ],
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "ArticlesGridScreen",
+      "title": "Grid",
+      "image": "./server/assets/screens/grid.png",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "ArticlesListScreen",
+      "title": "List",
+      "image": "./server/assets/screens/list.png",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "ArticlesFeaturedListScreen",
+      "title": "List with a featured article",
+      "image": "./server/assets/screens/featuredlist.png",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "ArticleDetailsScreen",
+      "title": "Large photo details",
+      "groupTitle": "Choose Details screen layout",
+      "image": "./server/assets/screens/large-details.png"
+    },
+    {
+      "name": "ArticleMediumDetailsScreen",
+      "title": "Regular details",
+      "image": "./server/assets/screens/medium-details.png",
+      "extends": "@.ArticleDetailsScreen"
+    }
+  ]
+}

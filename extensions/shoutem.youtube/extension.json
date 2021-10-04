@@ -1,0 +1,75 @@
+{
+  "name": "youtube",
+  "title": "YouTube",
+  "version": "3.0.0",
+  "platform": "^3.0.0",
+  "description": "Show a video gallery from YouTube channel, user or playlist",
+  "releaseNotes": "* Added support for YouTube feeds with custom channel URL\n* Improved parsing YouTube feed URLs\n* Added sort type option for non-playlist type feed URLs",
+  "dependencies": [
+    "shoutem.layouts"
+  ],
+  "categories": [
+    "media"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "icon": "server/assets/add-videos-youtube-image.png",
+  "shortcuts": [
+    {
+      "title": "YouTube",
+      "name": "youtube-shortcut",
+      "icon": "theme://play.png",
+      "screen": "@.YoutubeVideosScreen",
+      "adminPages": [
+        {
+          "page": "@.YoutubeFeedPage",
+          "title": "Content"
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "YouTube",
+        "extensionTitle": "YouTube"
+      }
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.SettingsPage",
+      "title": "Settings"
+    }
+  ],
+  "pages": [
+    {
+      "name": "SettingsPage",
+      "path": "server/build/index.html?page=SettingsPage",
+      "type": "html"
+    },
+    {
+      "name": "YoutubeFeedPage",
+      "path": "server/build/index.html?page=YoutubeFeedPage",
+      "type": "html"
+    }
+  ],
+  "screens": [
+    {
+      "name": "YoutubeVideosScreen",
+      "title": "Big list",
+      "image": "server/assets/screens/big-list.png"
+    },
+    {
+      "name": "YoutubeSmallListScreen",
+      "title": "Small list",
+      "image": "server/assets/screens/small-list.png",
+      "extends": "@.YoutubeVideosScreen"
+    },
+    {
+      "name": "YoutubeVideoDetailsScreen"
+    }
+  ]
+}

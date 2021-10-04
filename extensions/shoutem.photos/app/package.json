@@ -1,0 +1,10 @@
+{
+  "name": "shoutem.photos",
+  "version": "3.0.1-build1629386942786",
+  "description": "Shoutem photos extension",
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}
