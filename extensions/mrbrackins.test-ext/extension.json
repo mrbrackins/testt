@@ -16,5 +16,20 @@
       "description": "A shortcut for MyScreen",
       "screen": "@.MyScreen"
     }
+  ],
+  "themes": [
+    {
+      "title": "Testext",
+      "description": "",
+      "name": "testext",
+      "showcase": [],
+      "variables": "@.testextVariables"
+    }
+  ],
+  "themeVariables": [
+    {
+      "name": "testextVariables",
+      "path": "./server/themes/testextVariables.json"
+    }
   ]
 }

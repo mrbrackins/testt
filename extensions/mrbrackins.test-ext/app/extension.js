@@ -5,6 +5,13 @@
 // screens imports
 import MyScreen from './screens/MyScreen';
 
+// themes imports
+import testext from './themes/testext';
+
 export const screens = {
   MyScreen
+};
+
+export const themes = {
+  testext
 };
